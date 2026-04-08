@@ -31,9 +31,6 @@ blockquote.small {
 	@endif
 	</div>
 </div>
-@if ($template->template_charge > 0)
-<p class="small">Purchased at: {{ $purchased_on }}</p>
-@endif
 <p class="small"><a href="{{ route('templatesHome') }}">← Back to templates</a></p>
 @if ($template->template_description != '')
 	<p>{!! $template->template_description !!}</p>

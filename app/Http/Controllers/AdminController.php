@@ -122,10 +122,9 @@ class AdminController extends Controller
         $template_name = '';
         $template_description = '';
         $template_type = '';
-        $template_charge = 0;
         $template_is_lp = 0;
         $template_is_public = 1;
-        return view('admin.editLogTemplate', compact('json_data', 'template_id', 'template_name', 'template_description', 'template_type', 'template_charge', 'template_is_lp', 'template_is_public'));
+        return view('admin.editLogTemplate', compact('json_data', 'template_id', 'template_name', 'template_description', 'template_type', 'template_is_lp', 'template_is_public'));
     }
 
     public function postAddTemplate(TemplateRequest $request)
@@ -135,7 +134,6 @@ class AdminController extends Controller
         $template->template_name = $request->input('template_name');
         $template->template_description = $request->input('template_description');
         $template->template_type = $request->input('template_type');
-        $template->template_charge = $request->input('template_charge');
         $template->template_is_lp = $request->input('template_is_lp', 0);
         $template->template_is_public = $request->input('template_is_public', 0);
         $template->save();
@@ -161,11 +159,10 @@ class AdminController extends Controller
         $template_name = $template->template_name;
         $template_description = $template->template_description;
         $template_type = $template->template_type;
-        $template_charge = $template->template_charge;
         $template_is_lp = $template->template_is_lp;
         $template_is_public = $template->template_is_public;
         $json_data = Templates::loadJSONData($template);
-        return view('admin.editLogTemplate', compact('json_data', 'template_id', 'template_name', 'template_description', 'template_type', 'template_charge', 'template_is_lp', 'template_is_public'));
+        return view('admin.editLogTemplate', compact('json_data', 'template_id', 'template_name', 'template_description', 'template_type', 'template_is_lp', 'template_is_public'));
     }
 
     public function postEditTemplate(TemplateRequest $request, $template_id)
@@ -180,7 +177,6 @@ class AdminController extends Controller
             'template_name' => $request->input('template_name'),
             'template_description' => $request->input('template_description'),
             'template_type' => $request->input('template_type'),
-            'template_charge' => $request->input('template_charge'),
             'template_is_lp' => $request->input('template_is_lp', 0),
             'template_is_public' => $request->input('template_is_public', 0),
         ]);
