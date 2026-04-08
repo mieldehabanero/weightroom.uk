@@ -18,7 +18,6 @@ class CreateTemplatesTable extends Migration
             $table->text('template_description');
             $table->string('template_type');
             $table->integer('user_id')->default(1);
-            $table->decimal('template_charge', 5, 2)->default(0);
             $table->tinyInteger('template_is_lp')->default(0);
             $table->tinyInteger('template_is_public')->default(1);
             $table->integer('template_score')->default(0);

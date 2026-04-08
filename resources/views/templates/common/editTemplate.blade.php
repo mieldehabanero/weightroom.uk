@@ -115,12 +115,6 @@
             <label for="template_is_public">Public</label>
             <input type="checkbox" name="template_is_public" value="1" {{ $template_is_public ? 'checked' : '' }}>
         </div>
-        @if(Auth::user()->user_id == 1)
-        <div class="form-inline margintb">
-            <label for="template_charge">Price ($): </label>
-            <input type="input" value="{{ $template_charge }}" name="template_charge" class="form-control">
-        </div>
-        @endif
         {!! csrf_field() !!}
         <button type="submit" class="btn btn-default">Submit</button>
         @if ($template_id > 0)

@@ -47,11 +47,6 @@ Route::group(['prefix' => 'user'], function () {
         Route::get('unfollow/{user_name}/{date?}', 'UserController@unfollow')->name('unfollowUser');
         Route::get('notifications/clear', 'UserController@clearNotifications')->name('clearNotifications');
         Route::get('notification/{note_id}/clear', 'UserController@clearNotification')->name('clearNotification');
-        // seller setup
-        Route::get('seller-setup', 'TemplateController@getSetupPayAccount')->name('setupPayAccount');
-        Route::post('seller-setup', 'TemplateController@postSetupPayAccount');
-        Route::get('seller-setup/bank', 'TemplateController@getSetupPayAccountBank')->name('setupPayAccountBank');
-        Route::post('seller-setup/bank', 'TemplateController@postSetupPayAccountBank');
     });
 });
 
@@ -177,9 +172,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'templates'], function () {
     });
     // active templates
     Route::match(['get', 'post'], 'active/{template_id}', 'TemplateController@setActiveTemplate')->name('setActiveTemplate');
-    // template payments
-    Route::get('purchase/{template_id}', 'TemplateController@getTemplateSaleProcess')->name('templateSaleProcess');
-    Route::post('purchase/{template_id}', 'TemplateController@postTemplateSaleProcess');
 });
 
 // admin
