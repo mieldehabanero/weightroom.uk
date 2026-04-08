@@ -1,14 +1,14 @@
 var dataCacheName = 'weightRoom-v1';
 var cacheName = 'weightRoomPWA';
 var filesToCache = [
-    'https://weightroom.uk/m/',
-    'https://weightroom.uk/js/pwa.js',
-    'https://weightroom.uk/js/vue.min.js',
-    'https://weightroom.uk/css/pwa.css',
-    'https://weightroom.uk/css/materialize.min.css',
-    'https://weightroom.uk/js/materialize.min.js',
-    'https://weightroom.uk/js/log.edit.js',
-    'https://weightroom.uk/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'
+    '/m/',
+    '/js/pwa.js',
+    '/js/vue.min.js',
+    '/css/pwa.css',
+    '/css/materialize.min.css',
+    '/js/materialize.min.js',
+    '/js/log.edit.js',
+    '/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'
 ];
 
 self.addEventListener('install', function(e) {

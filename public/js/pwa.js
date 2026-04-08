@@ -48,7 +48,7 @@ document.getElementById('refresh-log-button').addEventListener('click', function
 app.addLogForm.addEventListener('submit', function(event) {
     event.preventDefault();
     var request = new XMLHttpRequest();
-    var url = 'https://weightroom.uk/log/' + app.currentDate + '/' + (app.logVue.is_empty ? 'new' : 'edit');
+    var url = '/log/' + app.currentDate + '/' + (app.logVue.is_empty ? 'new' : 'edit');
     request.onreadystatechange = function() {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
@@ -212,7 +212,7 @@ app.loadLog = function(date, force) {
     app.toggleLoading();
     app.currentDate = date.dateString();
     app.dateHeader.innerText = date.toDateString();
-    var url = 'https://weightroom.uk/api/v1/log/'+ app.user +'/'+ app.currentDate;
+    var url = '/api/v1/log/' + app.user + '/' + app.currentDate;
     app.getAPIrequest(url, app.updateLog, force);
 };
 
@@ -231,18 +231,18 @@ app.setUserdata = function(userData) {
         // load start up data
         app.loadLog(new Date(app.currentDate));
         // load calender
-        var url = 'https://weightroom.uk/api/v1/cal/'+ app.user;
+        var url = '/api/v1/cal/' + app.user;
         app.getAPIrequest(url, app.updateCalDates);
     } else {
-        window.location = 'https://weightroom.uk/login';
+        window.location = '/login';
     }
 };
 
-var url = 'https://weightroom.uk/api/v1/userdata/';
+var url = '/api/v1/userdata';
 app.getAPIrequest(url, app.setUserdata, true);
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-        .register('https://weightroom.uk/serviceworker.js', {scope:'/'})
+        .register('/serviceworker.js', {scope:'/'})
         .then(function() { console.log('Service Worker Registered'); });
 }
