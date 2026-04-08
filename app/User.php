@@ -10,7 +10,6 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Laravel\Cashier\Billable;
 use Laravel\Passport\HasApiTokens;
 use Cache;
 use Auth;
@@ -19,7 +18,7 @@ class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
 {
-    use Authenticatable, Authorizable, CanResetPassword, Notifiable, Billable, HasApiTokens;
+    use Authenticatable, Authorizable, CanResetPassword, Notifiable, HasApiTokens;
 
     /**
      * The database table used by the model.
@@ -43,19 +42,11 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = [
         'user_password',
-        'remember_token',
-        'stripe_active',
-        'stripe_id',
-        'stripe_plan',
-        'card_brand',
-        'card_last_four',
-        'stripe_custom_id'
+        'remember_token'
     ];
 
     protected $dates = [
-        'user_joined',
-        'trial_ends_at',
-        'subscription_ends_at'
+        'user_joined'
     ];
 
     protected $casts = [
@@ -63,8 +54,7 @@ class User extends Model implements AuthenticatableContract,
         'user_beta' => 'boolean',
         'user_admin' => 'boolean',
         'user_showreps' => 'array',
-        'user_showextrareps' => 'array',
-        'stripe_active' => 'boolean'
+        'user_showextrareps' => 'array'
     ];
 
     protected $appends = ['user_volumewarmup'];
