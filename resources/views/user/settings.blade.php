@@ -127,14 +127,14 @@
   </div>
   <div class="form-group">
     <div>
-		<label for="privacy">Make logs private</label>@if (!Auth::user()->subscribed('weightroom_gold')) <a href="{{ route('userPremium') }}" class="text-muted" data-toggle="tooltip" data-placement="right" title="Premium Feature"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a> @endif
+		<label for="privacy">Make logs private</label>
   		<p><small><i>Means only people you accept will be able to see your logs</i></small></p>
   	</div>
 	<label class="radio-inline">
-	  <input type="radio" class="privacy" name="privacy" value="0" {{ ($user->user_private == '0' || !Auth::user()->subscribed('weightroom_gold')) ? 'checked' : '' }} {{ !Auth::user()->subscribed('weightroom_gold') ? 'disabled' : '' }}> No
+	  <input type="radio" class="privacy" name="privacy" value="0" {{ $user->user_private == '0' ? 'checked' : '' }}> No
 	</label>
 	<label class="radio-inline">
-	  <input type="radio" class="privacy" name="privacy" value="1" {{ ($user->user_private == '1' && Auth::user()->subscribed('weightroom_gold')) ? 'checked' : '' }} {{ !Auth::user()->subscribed('weightroom_gold') ? 'disabled' : '' }}> Yes
+	  <input type="radio" class="privacy" name="privacy" value="1" {{ $user->user_private == '1' ? 'checked' : '' }}> Yes
 	</label>
   </div>
   <div class="form-group">
