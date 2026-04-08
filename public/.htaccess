@@ -2,7 +2,9 @@
 AddHandler application/x-httpd-php55 .php
 
 # Disallow embedding
-Content-Security-Policy: frame-ancestors 'none'
+<IfModule mod_headers.c>
+    Header always set Content-Security-Policy "frame-ancestors 'none'"
+</IfModule>
 
 # limit access
 Options -Indexes
