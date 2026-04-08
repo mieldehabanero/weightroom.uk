@@ -2,8 +2,6 @@
 
 Built on laravel framework.
 
-Check out the production site at https://weightroom.uk
-
 ## Docker
 
 This repo now includes a basic Docker setup for the legacy Laravel 5.5 app.
