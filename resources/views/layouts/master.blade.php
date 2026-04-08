@@ -67,7 +67,6 @@
         @if (Admin::InvitesEnabled())
           <li role="presentation"><a href="{{ route('invites') }}">{{ trans('master.inviteCodes') }}</a></li>
         @endif
-          <li role="presentation"><a href="{{ route('userPremium') }}" class="alert-warning strong"><span class="alert-warning strong"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;{{ trans('master.premium') }}</span></a></li>
           <li role="presentation"><a href="{{ route('viewBlog') }}">{{ trans('master.blog') }}</a></li>
           <li role="presentation"><a href="{{ route('faq') }}">{{ trans('master.faq') }}</a></li>
           <li role="presentation"><a href="{{ route('userSettings') }}">{{ trans('master.settings') }}</a></li>
