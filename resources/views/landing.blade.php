@@ -18,7 +18,7 @@
 
 <style>
 #background-box {
-	background-image: url('//weightroom.uk/img/background-1.jpg');
+	background-image: url('{{ asset('img/background-1.jpg') }}');
 	background-position: 0 -100px;
 	height: 600px;
 }
@@ -128,14 +128,14 @@ button.btn-default:hover {
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-					<a class="navbar-brand" href="//weightroom.uk/">weightroom.uk</a> <p class="navbar-text">[beta]</p>
+					<a class="navbar-brand" href="{{ route('home') }}">weightroom.uk</a> <p class="navbar-text">[beta]</p>
 				</div>
 
 				<div class="collapse navbar-collapse navbar-right" id="navbar-content">
 					<ul class="nav navbar-nav">
 						<li><a href="{{ route('tools') }}">Tools</a></il>
 						<li><a href="{{ route('demo') }}">Demo</a></il>
-						<li><a href="//weightroom.uk/blog/">Blog</a></il>
+						<li><a href="{{ route('viewBlog') }}">Blog</a></il>
 						<li><a href="{{ route('login') }}">Login</a></il>
 					</ul>
 				</div>
@@ -168,7 +168,7 @@ button.btn-default:hover {
 			</p>
 		</div>
 		<div class="col-md-6" id="logscreen">
-			<img src="//weightroom.uk/img/landing/log.png" class="img-responsive" alt="Log workout screen">
+			<img src="{{ asset('img/landing/log.png') }}" class="img-responsive" alt="Log workout screen">
 		</div>
 	</div>
 	<div class="row">
@@ -181,7 +181,7 @@ button.btn-default:hover {
 			</p>
 		</div>
 		<div class="col-md-6 pull-left" id="volumescreen">
-			<img src="//weightroom.uk/img/landing/volume.png" class="img-responsive" alt="View workout volume">
+			<img src="{{ asset('img/landing/volume.png') }}" class="img-responsive" alt="View workout volume">
 		</div>
 	</div>
 	<div class="row">
@@ -193,7 +193,7 @@ button.btn-default:hover {
 			</p>
 		</div>
 		<div class="col-md-6" id="goalscreen">
-			<img src="//weightroom.uk/img/landing/goal.png" class="img-responsive" alt="Create goals">
+			<img src="{{ asset('img/landing/goal.png') }}" class="img-responsive" alt="Create goals">
 		</div>
 	</div>
 	<div class="row">
@@ -205,7 +205,7 @@ button.btn-default:hover {
 			</p>
 		</div>
 		<div class="col-md-6 pull-left" id="volumescreen">
-			<img src="//weightroom.uk/img/landing/templates.png" class="img-responsive" alt="Workout templates">
+			<img src="{{ asset('img/landing/templates.png') }}" class="img-responsive" alt="Workout templates">
 		</div>
 	</div>
 </div>

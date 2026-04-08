@@ -4,7 +4,7 @@
 
 @section('content')
 <h2>Privacy Policy</h2>
-<p>This Privacy Policy governs the manner in which The WeightRoom.uk collects, uses, maintains and discloses information collected from users (each, a "user") of the <a href="//weightroom.uk/">http://weightroom.uk/</a> website ("Website", "us" or "we").</p>
+<p>This Privacy Policy governs the manner in which The WeightRoom.uk collects, uses, maintains and discloses information collected from users (each, a "user") of the <a href="{{ url('/') }}">{{ url('/') }}</a> website ("Website", "us" or "we").</p>
 
 <h3>Personal identification information</h3>
 <p>We may collect personal identification information from Users in a variety of ways, including, but not limited to, when Users interact with our site and register on the website. We will collect personal identification information from Users only if they voluntarily submit such information to us. Users can always refuse to supply personally identification information, except that it may prevent them from engaging in certain website related activities.</p>
