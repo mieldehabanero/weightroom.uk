@@ -47,11 +47,6 @@ Route::group(['prefix' => 'user'], function () {
         Route::get('unfollow/{user_name}/{date?}', 'UserController@unfollow')->name('unfollowUser');
         Route::get('notifications/clear', 'UserController@clearNotifications')->name('clearNotifications');
         Route::get('notification/{note_id}/clear', 'UserController@clearNotification')->name('clearNotification');
-        // subscription routes
-        Route::get('premium', 'SubscriptionController@getPremium')->name('userPremium');
-        Route::post('premium', 'SubscriptionController@postPremium');
-        Route::get('premium/cancel', 'SubscriptionController@getCancelPremium')->name('userCancelPremium');
-        Route::get('premium/resume', 'SubscriptionController@getResumePremium')->name('userResumePremium');
         // seller setup
         Route::get('seller-setup', 'TemplateController@getSetupPayAccount')->name('setupPayAccount');
         Route::post('seller-setup', 'TemplateController@postSetupPayAccount');
@@ -59,12 +54,6 @@ Route::group(['prefix' => 'user'], function () {
         Route::post('seller-setup/bank', 'TemplateController@postSetupPayAccountBank');
     });
 });
-
-// stripe failed payment route
-Route::post(
-    'stripe/webhook',
-    '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook'
-);
 
 // Log controller
 Route::group(['middleware' => 'auth'], function () {

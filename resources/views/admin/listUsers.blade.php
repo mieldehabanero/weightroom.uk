@@ -20,8 +20,6 @@
 @foreach ($users as $user)
   @if ($user->user_firstlog)
     <tr class="danger"> <!-- user has posted no logs -->
-  @elseif ($user->subscribed('weightroom_gold'))
-    <tr class="warning"> <!-- user has premium -->
   @else
     <tr>
   @endif

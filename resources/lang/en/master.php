@@ -25,7 +25,6 @@ return [
     'tools' => 'Tools',
     'templates' => 'Templates',
     'inviteCodes' => 'Invite codes',
-    'premium' => 'Support Us',
     'blog' => 'Blog',
     'faq' => 'F.A.Q.',
     'settings' => 'Settings',
