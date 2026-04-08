@@ -1,0 +1,23 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build test image
+        run: docker build -t weightroomuk-tests .
+
+      - name: Run PHPUnit
+        run: |
+          docker run --rm \
+            weightroomuk-tests \
+            bash -lc "composer install --no-interaction --prefer-dist && ./vendor/bin/phpunit"
