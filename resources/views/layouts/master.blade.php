@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title') | WeightRoom - Track dem gains</title>
-    <base href="//weightroom.uk/">
+    <base href="{{ rtrim(url("/"), "/") }}/">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <meta http-equiv="Content-Language" content="en">
     <meta name="description" content="@yield('description', 'The ultimate weightlifting and powerlifting workout tracker. Track each of your workouts with beautiful logging and analysis tools')">
