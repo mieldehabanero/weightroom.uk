@@ -20,7 +20,7 @@
                         echo "<li>You need to <a href=\"". route('setupPayAccountBank') . "\"><strong>attach a card</strong></a> to this account.</li>";
                         break;
                     case 'legal_entity.verification.document':
-                        echo "<li>You must submit a valid ID, please send this to verify@weightroom.uk in jpg or png format along with your uesrname.</li>";
+                        echo '<li>You must submit a valid ID, please send this to ' . e(config('mail.verify_address')) . ' in jpg or png format along with your uesrname.</li>';
                         break;
                     default:
                         echo '<li>' . $missing . '</li>';
