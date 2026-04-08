@@ -6,6 +6,7 @@
 <h2>Admin Land</h2>
 @include('common.flash')
 <p>We love you, you're rad.</p>
+<p><strong>Version:</strong> {{ config('app.version') }}</p>
 <h3>Stuff</h3>
 <ul>
 	<li><a href="{{ route('adminListUsers') }}">List Users</a></li>

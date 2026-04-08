@@ -142,6 +142,7 @@
   <div class="container text-muted">
     <ul class="list-inline pull-left footer-links">
       <li>2019 &#169; weightroom.uk</li>
+      <li>Version {{ config('app.version') }}</li>
       <li><a href="{{ route('privacyPolicy') }}">Privacy</a></li>
       <li><a href="{{ route('termsOfService') }}">Terms</a></li>
       <li><a href="{{ route('contactUs') }}">Contact</a></li>

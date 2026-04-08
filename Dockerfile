@@ -1,7 +1,9 @@
 FROM php:7.2-apache
 
+ARG APP_VERSION=dev
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 ENV COMPOSER_ALLOW_SUPERUSER=1
+ENV APP_VERSION=${APP_VERSION}
 
 RUN sed -ri 's!deb.debian.org/debian!archive.debian.org/debian!g; s!security.debian.org/debian-security!archive.debian.org/debian-security!g' /etc/apt/sources.list \
     && printf 'Acquire::Check-Valid-Until "false";\n' > /etc/apt/apt.conf.d/99archive \
