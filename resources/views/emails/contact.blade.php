@@ -1,4 +1,4 @@
-You received a message from weightroom.uk:
+You received a message from {{ rtrim(url('/'), '/') }}:
 
 <p>
 Name: {{ $name }}

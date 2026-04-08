@@ -54,7 +54,10 @@ return [
     |
     */
 
-    'from' => ['address' => 'robot@weightroom.uk', 'name' => 'Weightroom\'s Friendly Robot'],
+    'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', 'robot@example.test'),
+        'name' => config('app.name'),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +83,7 @@ return [
     |
     */
 
-    'username' => env('postmaster@weightroom.uk'),
+    'username' => env('MAIL_USERNAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +96,23 @@ return [
     |
     */
 
-    'password' => env(''),
+    'password' => env('MAIL_PASSWORD'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Contact Addresses
+    |--------------------------------------------------------------------------
+    |
+    | These addresses are used in user-facing pages and contact workflows so
+    | local and non-production environments can avoid hardcoded domains.
+    |
+    */
+
+    'contact_address' => env('MAIL_CONTACT_ADDRESS', env('MAIL_FROM_ADDRESS', 'support@example.test')),
+
+    'verify_address' => env('MAIL_VERIFY_ADDRESS', env('MAIL_CONTACT_ADDRESS', env('MAIL_FROM_ADDRESS', 'support@example.test'))),
+
+    'dmca_address' => env('MAIL_DMCA_ADDRESS', env('MAIL_CONTACT_ADDRESS', env('MAIL_FROM_ADDRESS', 'support@example.test'))),
 
     /*
     |--------------------------------------------------------------------------

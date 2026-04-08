@@ -73,7 +73,7 @@ class MiscController extends Controller
             ], function($message) use ($request)
         {
             $message->from($request->get('email'));
-            $message->to('chris@weightroom.uk', 'Admin')->subject('WeightRoom Feedback');
+            $message->to(config('mail.contact_address'), 'Admin')->subject('WeightRoom Feedback');
         });
         return redirect()
             ->route('contactUs')

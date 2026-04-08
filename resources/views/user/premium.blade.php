@@ -9,7 +9,7 @@
   <div class="subscription-box">
   @if (Auth::user()->subscribed('weightroom_gold') && Auth::user()->subscription('weightroom_gold')->onTrial())
     <p class="lead">You are currently using a trial of WeightRoom Gold, this will expire at <code>{{ Auth::user()->subscription('weightroom_gold')->trial_ends_at->toDayDateTimeString() }}</code>.</p>
-    <p class="lead">We hope you are finding WeightRoom useful and we would love to hear from you. Why not send us an <a href="mailto:chris@weightroom.uk">email</a>.</p>
+    <p class="lead">We hope you are finding WeightRoom useful and we would love to hear from you. Why not send us an <a href="mailto:{{ config('mail.contact_address') }}">email</a>.</p>
     <a class="btn btn-default" href="{{ route('userCancelPremium') }}" role="button">Cancel Premium</a>
   @elseif (Auth::user()->subscribed('weightroom_gold') && Auth::user()->subscription('weightroom_gold')->onGracePeriod())
     <p class="lead">Thank you so much for supporting us while you did. We are sad that you now longer can or don't wont to but if you change your mind it is as easy as one click away.</p>
@@ -17,7 +17,7 @@
     <a class="btn btn-default" href="{{ route('userResumePremium') }}" role="button">Resume Premium</a>
   @elseif (Auth::user()->subscribed('weightroom_gold'))
     <p class="lead">We would like to give you a huge thank you for supporting us.</p>
-    <p class="lead">We hope you are finding WeightRoom useful and we would love to hear from you. Why not send us an <a href="mailto:chris@weightroom.uk">email</a>.</p>
+    <p class="lead">We hope you are finding WeightRoom useful and we would love to hear from you. Why not send us an <a href="mailto:{{ config('mail.contact_address') }}">email</a>.</p>
     <a class="btn btn-default" href="{{ route('userCancelPremium') }}" role="button">Cancel Premium</a>
   @else
     <p class="lead">Why not support us for just $2 a month and of course if you just want to support us with a one off payment you can easily cancel the subscription at any time.</p>

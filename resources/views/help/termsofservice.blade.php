@@ -3,8 +3,9 @@
 @section('title', 'Terms of Service')
 
 @section('content')
+@php($appUrl = rtrim(url('/'), '/'))
 <h2>Terms of Service</h2>
-<p>Welcome to WeighRoom! (a.k.a. "we" or "us" or the "Website"). We are pleased to have you on board as a user and member of the community. The following terms and conditions (collectively, these "Terms of Service") apply to your use of www.weightroom.uk, including any content, functionality and services offered on or via weightroom.uk (the "Website").
+<p>Welcome to WeighRoom! (a.k.a. "we" or "us" or the "Website"). We are pleased to have you on board as a user and member of the community. The following terms and conditions (collectively, these "Terms of Service") apply to your use of {{ $appUrl }}, including any content, functionality and services offered on or via {{ $appUrl }} (the "Website").
 
 We want to keep our relationship with you as lean and informal as possible, but please read the Terms of Service carefully before you start using WeightRoom, because by using the Website you accept and agree to be bound and abide by these Terms of Service.</p>
 
@@ -129,7 +130,7 @@ We want to keep our relationship with you as lean and informal as possible, but 
         authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.
     </li>
 </ol>
-<p> The notice should be addressed to dmca@weightroom.uk</p>
+<p> The notice should be addressed to {{ config('mail.dmca_address') }}</p>
 
 <h3>Disclaimer of Warranties, Limitations of Liability and Indemnification.</h3>
 <p><strong>Your use of WeightRoom is at your sole risk. The service is provided &quot;as is&quot; and &quot;as
