@@ -2,6 +2,10 @@
 
 Built on laravel framework.
 
+## Purpose
+
+This fork exists mainly to make the original project easy to self-host with Docker, remove the old donor-only limits, and keep a record of how the parser behaves today. Apart from the small fixes needed to get the app running properly in Docker, the idea is to leave the project as-is.
+
 ## Docker
 
 This repo now includes a basic Docker setup for the legacy Laravel 5.5 app.
