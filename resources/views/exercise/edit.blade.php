@@ -151,7 +151,7 @@ $(document).ready(function() {
     // Execute callback when a tag is added
     $tag_box.on( "add:after", function ( el, text, tagging ) {
         $.ajax({
-            url: '{{ route('addToExerciseGroup') }}',
+            url: '{{ route('addToExerciseGroup', [], false) }}',
             type: 'POST',
             data: {'group_name': text, 'exercise_name': '{{ $exercise_name }}', '_token': '{!! csrf_token() !!}'},
             dataType: 'json',
@@ -162,7 +162,7 @@ $(document).ready(function() {
     // Execute callback when a tag is removed
     $tag_box.on( "remove:after", function ( el, text, tagging ) {
         $.ajax({
-            url: '{{ route('deleteFromExerciseGroup') }}',
+            url: '{{ route('deleteFromExerciseGroup', [], false) }}',
             type: 'POST',
             data: {'group_name': text, 'exercise_name': '{{ $exercise_name }}', '_token': '{!! csrf_token() !!}'},
             dataType: 'json',

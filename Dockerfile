@@ -9,7 +9,8 @@ RUN mkdir -p /app/public/css /app/public/js \
     && ln -s /app/public /public \
     && npm install \
     && npm run production \
-    && cp /app/mix-manifest.json /app/public/mix-manifest.json
+    && cp /app/mix-manifest.json /app/public/mix-manifest.json \
+    && sed -i 's#"/public/#"/#g' /app/public/mix-manifest.json
 
 FROM php:7.2-apache
 
