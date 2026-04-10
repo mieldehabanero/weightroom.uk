@@ -13,8 +13,8 @@ var mix = require('laravel-mix');
 
 // main style sheet
 mix.styles('resources/assets/css/global.css', 'public/css/global.css');
-// combine d3 & nvd3 as are always used together
-mix.js(['resources/assets/js/packages/d3.js',
+// combine d3 & nvd3 as plain vendor scripts
+mix.combine(['resources/assets/js/packages/d3.js',
     'resources/assets/js/packages/nv.d3.js'], 'public/js/graphing.js');
 // combine packages for editLog page
 mix.combine(['resources/assets/js/packages/codemirror/codemirror.js',
