@@ -5,8 +5,11 @@ WORKDIR /app
 COPY package.json webpack.mix.js ./
 COPY resources/assets ./resources/assets
 
-RUN npm install \
-    && npm run production
+RUN mkdir -p /app/public/css /app/public/js \
+    && ln -s /app/public /public \
+    && npm install \
+    && npm run production \
+    && cp /app/mix-manifest.json /app/public/mix-manifest.json
 
 FROM php:7.2-apache
 
