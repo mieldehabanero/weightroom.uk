@@ -1,4 +1,4 @@
-FROM node:14-bullseye-slim AS assets
+FROM --platform=$BUILDPLATFORM node:14-bullseye-slim AS assets
 
 WORKDIR /app
 
