@@ -1,3 +1,13 @@
+FROM node:14-bullseye-slim AS assets
+
+WORKDIR /app
+
+COPY package.json webpack.mix.js ./
+COPY resources/assets ./resources/assets
+
+RUN npm install \
+    && npm run production
+
 FROM php:7.2-apache
 
 ARG APP_VERSION=dev
@@ -46,6 +56,11 @@ COPY --from=composer:1 /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 COPY . .
+COPY --from=assets /app/public/css/global.css ./public/css/global.css
+COPY --from=assets /app/public/js/graphing.js ./public/js/graphing.js
+COPY --from=assets /app/public/js/log.edit.js ./public/js/log.edit.js
+COPY --from=assets /app/public/js/comments.js ./public/js/comments.js
+COPY --from=assets /app/public/mix-manifest.json ./public/mix-manifest.json
 
 RUN mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views storage/logs \
     && composer install \
