@@ -1,3 +1,7 @@
+<script>
+window.weightroomRoutes = window.weightroomRoutes || {};
+window.weightroomRoutes.deleteComment = "{{ route('deleteComment', ['comment_id' => ':cid'], false) }}";
+</script>
 <script src="{{ mix('js/comments.js') }}"></script>
 
 <script>

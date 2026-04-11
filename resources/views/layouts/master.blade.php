@@ -166,7 +166,7 @@
     var notifications_count = {{ Auth::user()->notifications->count() }};
     $('#clear_notes').click(function(){
         $.ajax({
-            url: "{{ route('clearNotifications') }}",
+            url: "{{ route('clearNotifications', [], false) }}",
             cache: false
         });
         $('#notification_bubble').hide();
@@ -175,7 +175,7 @@
     $('.clear_note').click(function(){
         var note_id = $(this).attr('note-id');
         $.ajax({
-            url: "{{ route('clearNotification', ['note_id' => ':nid']) }}".replace(':nid', note_id),
+            url: "{{ route('clearNotification', ['note_id' => ':nid'], false) }}".replace(':nid', note_id),
             cache: false
         });
         notifications_count--;

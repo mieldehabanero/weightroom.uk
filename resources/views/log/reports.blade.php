@@ -256,7 +256,7 @@ svg {
     function callAjax()
     {
         $.ajax({
-            url: '{{ route('ajaxPullReports') }}',
+            url: '{{ route('ajaxPullReports', [], false) }}',
             method: "POST",
             data: {
                 view_type: $("#view_type").find(":selected").val(),

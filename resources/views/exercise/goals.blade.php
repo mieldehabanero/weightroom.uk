@@ -70,7 +70,7 @@
         },
         delete_goal: function(goal_id) {
           $.ajax({
-            url: '{{ route('deleteGoal') }}',
+            url: '{{ route('deleteGoal', [], false) }}',
             method: "POST",
             data: {
               id : goal_id,

@@ -130,7 +130,7 @@ $('#track_date').pickmeup({
 
 function loadlogdata(date)
 {
-    var url = '{{ route("ajaxCal", ["date" => ":date", "user_name" => Auth::user()->user_name]) }}';
+    var url = '{{ route("ajaxCal", ["date" => ":date", "user_name" => Auth::user()->user_name], false) }}';
     $.ajax({
         url: url.replace(':date', date),
         type: 'GET',

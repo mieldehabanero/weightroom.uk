@@ -283,7 +283,7 @@ $(document).ready(function(){
 
     function loadlogdata(date)
     {
-        var url = '{{ route("ajaxCal", ["date" => ":date", "user_name" => $user->user_name]) }}';
+        var url = '{{ route("ajaxCal", ["date" => ":date", "user_name" => $user->user_name], false) }}';
         $.ajax({
             url: url.replace(':date', date),
             type: 'GET',

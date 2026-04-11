@@ -12,7 +12,7 @@ $(document).ready(function(){
         var comment_id = $(this).attr('c-id');
         var element = $('#c' + comment_id).text('[Deleted]');
         $.ajax({
-            url: "{{ route('deleteComment', ['comment_id' => ':cid']) }}".replace(':cid', comment_id),
+            url: window.weightroomRoutes.deleteComment.replace(':cid', comment_id),
             type: 'GET',
             dataType: 'json',
             cache: false
